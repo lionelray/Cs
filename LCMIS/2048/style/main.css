@@ -1,0 +1,986 @@
+﻿@import url(fonts/clear-sans.css);
+/* line 21, main.scss */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #FAFAFA;
+  color: #737373;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 18px;
+}
+
+/* line 31, main.scss */
+body {
+  margin: 80px 0;
+}
+
+/* line 35, main.scss */
+.heading:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 41, main.scss */
+h1.title {
+  font-size: 80px;
+  font-weight: bold;
+  margin: 0;
+  display: block;
+  float: left;
+}
+
+@-webkit-keyframes move-up {
+  /* line 50, main.scss */
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+
+  /* line 55, main.scss */
+  100% {
+    top: -50px;
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes move-up {
+  /* line 50, main.scss */
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+
+  /* line 55, main.scss */
+  100% {
+    top: -50px;
+    opacity: 0;
+  }
+}
+
+@keyframes move-up {
+  /* line 50, main.scss */
+  0% {
+    top: 25px;
+    opacity: 1;
+  }
+
+  /* line 55, main.scss */
+  100% {
+    top: -50px;
+    opacity: 0;
+  }
+}
+
+/* line 61, main.scss */
+.scores-container {
+  float: right;
+  text-align: right;
+}
+
+/* line 66, main.scss */
+.score-container, .best-container {
+  position: relative;
+  display: inline-block;
+  background: #FFEA00;
+  padding: 15px 25px;
+  font-size: 25px;
+  height: 25px;
+  line-height: 47px;
+  font-weight: bold;
+  border-radius: 3px;
+  color: #776e65;
+  margin-top: 8px;
+  text-align: center;
+  font-family: STXihei;
+}
+/* line 82, main.scss */
+.score-container:after, .best-container:after {
+  position: absolute;
+  width: 100%;
+  top: 10px;
+  left: 0;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 13px;
+  text-align: center;
+  color: #776e65;
+  font-family: STXihei;
+}
+/* line 94, main.scss */
+.score-container .score-addition, .best-container .score-addition {
+  position: absolute;
+  right: 30px;
+  color: red;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  color: #C105FF;
+  z-index: 100;
+  -webkit-animation: move-up 600ms ease-in;
+  -moz-animation: move-up 600ms ease-in;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+}
+
+/* line 108, main.scss */
+.score-container:after {
+  content: "当前得分";
+}
+
+/* line 112, main.scss */
+.best-container:after {
+  content: "历史最佳";
+}
+
+/* line 116, main.scss */
+p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1.65;
+}
+
+/* line 122, main.scss */
+a {
+  color: #776e65;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: STXihei;
+}
+
+/* line 130, main.scss */
+strong.important {
+  text-transform: uppercase;
+}
+
+/* line 135, main.scss */
+hr {
+  border: none;
+  border-bottom: 1px solid #d8d4d0;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+/* line 142, main.scss */
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+@-webkit-keyframes fade-in {
+  /* line 148, main.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 152, main.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fade-in {
+  /* line 148, main.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 152, main.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  /* line 148, main.scss */
+  0% {
+    opacity: 0;
+  }
+
+  /* line 152, main.scss */
+  100% {
+    opacity: 1;
+  }
+}
+
+/* line 171, main.scss */
+.game-container {
+  margin-top: 40px;
+  position: relative;
+  padding: 15px;
+  cursor: default;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  background: #E3E3E3;
+  border-radius: 6px;
+  width: 500px;
+  height: 500px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 189, main.scss */
+.game-container .game-message {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(238, 228, 218, 0.5);
+  z-index: 100;
+  text-align: center;
+  -webkit-animation: fade-in 800ms ease 1200ms;
+  -moz-animation: fade-in 800ms ease 1200ms;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+}
+/* line 202, main.scss */
+.game-container .game-message p {
+  font-size: 60px;
+  font-weight: bold;
+  height: 60px;
+  line-height: 60px;
+  margin-top: 222px;
+  font-family: STXihei;
+}
+/* line 212, main.scss */
+.game-container .game-message .lower {
+  display: block;
+  margin-top: 59px;
+}
+/* line 217, main.scss */
+.game-container .game-message a {
+  display: inline-block;
+  background: #9F35FF;
+  border-radius: 3px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #f9f6f2;
+  height: 40px;
+  line-height: 42px;
+  margin-left: 9px;
+}
+/* line 226, main.scss */
+.game-container .game-message.game-won {
+  background: rgba(237, 194, 46, 0.5);
+  color: #8600FF;
+}
+/* line 231, main.scss */
+.game-container .game-message.game-won, .game-container .game-message.game-over {
+  display: block;
+}
+
+/* line 237, main.scss */
+.grid-container {
+  position: absolute;
+  z-index: 1;
+}
+
+/* line 242, main.scss */
+.grid-row {
+  margin-bottom: 15px;
+}
+/* line 245, main.scss */
+.grid-row:last-child {
+  margin-bottom: 0;
+}
+/* line 249, main.scss */
+.grid-row:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* line 256, main.scss */
+.grid-cell {
+  width: 106.25px;
+  height: 106.25px;
+  margin-right: 15px;
+  float: left;
+  border-radius: 3px;
+  background: #F2F2F2;
+}
+/* line 266, main.scss */
+.grid-cell:last-child {
+  margin-right: 0;
+}
+
+/* line 271, main.scss */
+.tile-container {
+  position: absolute;
+  z-index: 2;
+}
+
+/* line 276, main.scss */
+.tile {
+  width: 106.25px;
+  height: 106.25px;
+  line-height: 116.25px;
+}
+/* line 284, main.scss */
+.tile.tile-position-1-1 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+/* line 284, main.scss */
+.tile.tile-position-1-2 {
+  position: absolute;
+  left: 0px;
+  top: 121px;
+}
+/* line 284, main.scss */
+.tile.tile-position-1-3 {
+  position: absolute;
+  left: 0px;
+  top: 243px;
+}
+/* line 284, main.scss */
+.tile.tile-position-1-4 {
+  position: absolute;
+  left: 0px;
+  top: 364px;
+}
+/* line 284, main.scss */
+.tile.tile-position-2-1 {
+  position: absolute;
+  left: 121px;
+  top: 0px;
+}
+/* line 284, main.scss */
+.tile.tile-position-2-2 {
+  position: absolute;
+  left: 121px;
+  top: 121px;
+}
+/* line 284, main.scss */
+.tile.tile-position-2-3 {
+  position: absolute;
+  left: 121px;
+  top: 243px;
+}
+/* line 284, main.scss */
+.tile.tile-position-2-4 {
+  position: absolute;
+  left: 121px;
+  top: 364px;
+}
+/* line 284, main.scss */
+.tile.tile-position-3-1 {
+  position: absolute;
+  left: 243px;
+  top: 0px;
+}
+/* line 284, main.scss */
+.tile.tile-position-3-2 {
+  position: absolute;
+  left: 243px;
+  top: 121px;
+}
+/* line 284, main.scss */
+.tile.tile-position-3-3 {
+  position: absolute;
+  left: 243px;
+  top: 243px;
+}
+/* line 284, main.scss */
+.tile.tile-position-3-4 {
+  position: absolute;
+  left: 243px;
+  top: 364px;
+}
+/* line 284, main.scss */
+.tile.tile-position-4-1 {
+  position: absolute;
+  left: 364px;
+  top: 0px;
+}
+/* line 284, main.scss */
+.tile.tile-position-4-2 {
+  position: absolute;
+  left: 364px;
+  top: 121px;
+}
+/* line 284, main.scss */
+.tile.tile-position-4-3 {
+  position: absolute;
+  left: 364px;
+  top: 243px;
+}
+/* line 284, main.scss */
+.tile.tile-position-4-4 {
+  position: absolute;
+  left: 364px;
+  top: 364px;
+}
+
+/* line 297, main.scss */
+.tile {
+  border-radius: 3px;
+  background: #eee4da;
+  text-align: center;
+  font-weight: bold;
+  z-index: 10;
+  font-size: 55px;
+  -webkit-transition: 100ms ease-in-out;
+  -moz-transition: 100ms ease-in-out;
+  -webkit-transition-property: top, left;
+  -moz-transition-property: top, left;
+}
+/* line 332, main.scss */
+.tile.tile-2 {
+  color: white;
+  background: #DCB5FF;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+}
+/* line 332, main.scss */
+.tile.tile-4 {
+  color: white;
+  background: #d3a4ff;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0), inset 0 0 0 1px rgba(255, 255, 255, 0);
+}
+/* line 332, main.scss */
+.tile.tile-8 {
+  color: white;
+  background: #CA8EFF;
+}
+/* line 332, main.scss */
+.tile.tile-16 {
+  color: white;
+  background: #BE77FF;
+}
+/* line 332, main.scss */
+.tile.tile-32 {
+  color: white;
+  background: #B15BFF;
+}
+/* line 332, main.scss */
+.tile.tile-64 {
+  color: white;
+  background: #9F35FF;
+}
+/* line 332, main.scss */
+.tile.tile-128 {
+  color: white;
+  background: #921AFF;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.20833), inset 0 0 0 1px rgba(255, 255, 255, 0.125);
+  font-size: 45px;
+}
+@media screen and (max-width: 480px) {
+  /* line 332, main.scss */
+  .tile.tile-128 {
+    font-size: 25px;
+  }
+}
+/* line 332, main.scss */
+.tile.tile-256 {
+  color: white;
+  background: #8600FF;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.27778), inset 0 0 0 1px rgba(255, 255, 255, 0.16667);
+  font-size: 45px;
+}
+@media screen and (max-width: 480px) {
+  /* line 332, main.scss */
+  .tile.tile-256 {
+    font-size: 25px;
+  }
+}
+/* line 332, main.scss */
+.tile.tile-512 {
+  color: white;
+  background: #6F00D2;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.34722), inset 0 0 0 1px rgba(255, 255, 255, 0.20833);
+  font-size: 45px;
+}
+@media screen and (max-width: 480px) {
+  /* line 332, main.scss */
+  .tile.tile-512 {
+    font-size: 25px;
+  }
+}
+/* line 332, main.scss */
+.tile.tile-1024 {
+  color: white;
+  background: #5B00AE;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.41667), inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  font-size: 35px;
+}
+@media screen and (max-width: 480px) {
+  /* line 332, main.scss */
+  .tile.tile-1024 {
+    font-size: 15px;
+  }
+}
+/* line 332, main.scss */
+.tile.tile-2048 {
+  color: white;
+  background: #4B0091;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.48611), inset 0 0 0 1px rgba(255, 255, 255, 0.29167);
+  font-size: 35px;
+}
+@media screen and (max-width: 480px) {
+  /* line 332, main.scss */
+  .tile.tile-2048 {
+    font-size: 15px;
+  }
+}
+/* line 332, main.scss */
+.tile.tile-4096 {
+  color: white;
+  background: #3A006F;
+  box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+  font-size: 35px;
+}
+@media screen and (max-width: 480px) {
+  /* line 332, main.scss */
+  .tile.tile-4096 {
+    font-size: 15px;
+  }
+}
+
+@-webkit-keyframes appear {
+  /* line 383, main.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+  }
+
+  /* line 389, main.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+  }
+}
+
+@-moz-keyframes appear {
+  /* line 383, main.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+  }
+
+  /* line 389, main.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+  }
+}
+
+@keyframes appear {
+  /* line 383, main.scss */
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+  }
+
+  /* line 389, main.scss */
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+  }
+}
+
+/* line 396, main.scss */
+.tile-new {
+  -webkit-animation: appear 200ms ease 100ms;
+  -moz-animation: appear 200ms ease 100ms;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+}
+
+@-webkit-keyframes pop {
+  /* line 402, main.scss */
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+  }
+
+  /* line 407, main.scss */
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+  }
+
+  /* line 412, main.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+  }
+}
+
+@-moz-keyframes pop {
+  /* line 402, main.scss */
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+  }
+
+  /* line 407, main.scss */
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+  }
+
+  /* line 412, main.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+  }
+}
+
+@keyframes pop {
+  /* line 402, main.scss */
+  0% {
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+  }
+
+  /* line 407, main.scss */
+  50% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+  }
+
+  /* line 412, main.scss */
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+  }
+}
+
+/* line 418, main.scss */
+.tile-merged {
+  z-index: 20;
+  -webkit-animation: pop 200ms ease 100ms;
+  -moz-animation: pop 200ms ease 100ms;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+}
+
+/* line 424, main.scss */
+.game-intro {
+  margin-bottom: 0;
+  text-align:center;
+}
+
+/* line 428, main.scss */
+.game-explanation {
+  margin-top: 50px;
+}
+
+@media screen and (max-width: 480px) {
+  /* line 440, main.scss */
+  html, body {
+    font-size: 15px;
+  }
+
+  /* line 444, main.scss */
+  body {
+    margin: 20px 0;
+    padding: 0 20px;
+  }
+
+  /* line 449, main.scss */
+  h1.title {
+    font-size: 27px;
+    margin-top: 15px;
+  }
+
+  /* line 454, main.scss */
+  .container {
+    width: 280px;
+    margin: 0 auto;
+  }
+
+  /* line 464, main.scss */
+  .score-container, .best-container {
+    margin-top: 0;
+    padding: 15px 10px;
+    min-width: 40px;
+  }
+
+  /* line 470, main.scss */
+  .heading {
+    margin-bottom: 10px;
+  }
+
+  /* line 171, main.scss */
+  .game-container {
+    margin-top: 40px;
+    position: relative;
+    padding: 10px;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    background: #bbada0;
+    border-radius: 6px;
+    width: 280px;
+    height: 280px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  /* line 189, main.scss */
+  .game-container .game-message {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(238, 228, 218, 0.5);
+    z-index: 100;
+    text-align: center;
+    -webkit-animation: fade-in 800ms ease 1200ms;
+    -moz-animation: fade-in 800ms ease 1200ms;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+  }
+  /* line 202, main.scss */
+  .game-container .game-message p {
+    font-size: 60px;
+    font-weight: bold;
+    height: 60px;
+    line-height: 60px;
+    margin-top: 222px;
+  }
+  /* line 212, main.scss */
+  .game-container .game-message .lower {
+    display: block;
+    margin-top: 59px;
+  }
+  /* line 217, main.scss */
+  .game-container .game-message a {
+    display: inline-block;
+    background: #8f7a66;
+    border-radius: 3px;
+    padding: 0 20px;
+    text-decoration: none;
+    color: #f9f6f2;
+    height: 40px;
+    line-height: 42px;
+    margin-left: 9px;
+  }
+  /* line 226, main.scss */
+  .game-container .game-message.game-won {
+    background: rgba(237, 194, 46, 0.5);
+    color: #f9f6f2;
+  }
+  /* line 231, main.scss */
+  .game-container .game-message.game-won, .game-container .game-message.game-over {
+    display: block;
+  }
+
+  /* line 237, main.scss */
+  .grid-container {
+    position: absolute;
+    z-index: 1;
+  }
+
+  /* line 242, main.scss */
+  .grid-row {
+    margin-bottom: 10px;
+  }
+  /* line 245, main.scss */
+  .grid-row:last-child {
+    margin-bottom: 0;
+  }
+  /* line 249, main.scss */
+  .grid-row:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+
+  /* line 256, main.scss */
+  .grid-cell {
+    width: 57.5px;
+    height: 57.5px;
+    margin-right: 10px;
+    float: left;
+    border-radius: 3px;
+    background: rgba(238, 228, 218, 0.35);
+  }
+  /* line 266, main.scss */
+  .grid-cell:last-child {
+    margin-right: 0;
+  }
+
+  /* line 271, main.scss */
+  .tile-container {
+    position: absolute;
+    z-index: 2;
+  }
+
+  /* line 276, main.scss */
+  .tile {
+    width: 57.5px;
+    height: 57.5px;
+    line-height: 67.5px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-1-1 {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-1-2 {
+    position: absolute;
+    left: 0px;
+    top: 68px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-1-3 {
+    position: absolute;
+    left: 0px;
+    top: 135px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-1-4 {
+    position: absolute;
+    left: 0px;
+    top: 203px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-2-1 {
+    position: absolute;
+    left: 68px;
+    top: 0px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-2-2 {
+    position: absolute;
+    left: 68px;
+    top: 68px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-2-3 {
+    position: absolute;
+    left: 68px;
+    top: 135px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-2-4 {
+    position: absolute;
+    left: 68px;
+    top: 203px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-3-1 {
+    position: absolute;
+    left: 135px;
+    top: 0px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-3-2 {
+    position: absolute;
+    left: 135px;
+    top: 68px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-3-3 {
+    position: absolute;
+    left: 135px;
+    top: 135px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-3-4 {
+    position: absolute;
+    left: 135px;
+    top: 203px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-4-1 {
+    position: absolute;
+    left: 203px;
+    top: 0px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-4-2 {
+    position: absolute;
+    left: 203px;
+    top: 68px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-4-3 {
+    position: absolute;
+    left: 203px;
+    top: 135px;
+  }
+  /* line 284, main.scss */
+  .tile.tile-position-4-4 {
+    position: absolute;
+    left: 203px;
+    top: 203px;
+  }
+
+  /* line 477, main.scss */
+  .game-container {
+    margin-top: 20px;
+  }
+
+  /* line 482, main.scss */
+  .tile {
+    font-size: 35px;
+  }
+
+  /* line 487, main.scss */
+  .game-message p {
+    font-size: 30px !important;
+    height: 30px !important;
+    line-height: 30px !important;
+    margin-top: 90px !important;
+  }
+  /* line 494, main.scss */
+  .game-message .lower {
+    margin-top: 30px !important;
+  }
+}
+
+.btc-donate {
+  position: relative;
+  margin-left: 0px;
+  display: inline-block;
+  background: #FFF478;
+  border-radius: 10px;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #737373;
+  height: 40px;
+  line-height: 42px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: STXihei;
+   }
+
+.share {
+  position: relative;
+  margin-top: 5px;
+  margin-left: 0px;
+  display: inline-block;
+  background: #DCB5FF;
+  border-radius: 10px;
+  padding: 0 20px;
+  text-decoration: none;
+  height: 40px;
+  line-height: 42px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: STXihei;
+  }
+
+.links {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 20px;}
